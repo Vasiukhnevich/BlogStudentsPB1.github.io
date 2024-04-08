@@ -3,7 +3,7 @@
 <head>
 	<title>Blog Students PB</title>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" href="{% static '/css/style.css' %}" type="text/css" media="all" />
+	<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all" />
 
 	<link rel="shortcut icon" href="css/images/favicon.ico" />
 
@@ -25,26 +25,21 @@
 			<div id="content" class="left">
 				
 				<div class="projects">
-					<h3>Articles</h3>
-                    {% for post in post_list %}
+					<h3>{{ post.title }}</h3>
+                    <p align="center">
+                        <a href="#"><img src="{{ post.img.url }}" width="50%" /></a>
+                    </p>
 					<div class="item">
-						<div class="image left">
-							<a href="#"><img src="{{ post.img.url }}" width="200px" /></a>
-						</div>
 						<div class="text left">
-							<h2><a href="{{ post.id }}"> {{ post.title }}</a></h2>
-                            <h3> </h3>
 							<p>{{ post.description }}</p>
 							<p>Author: {{ post.author }}</p>
-                            <p>Date published: {{ post.date }} </p>
 						</div>
 						<div class="cl">&nbsp;</div>
 					</div>
-					{% endfor %}
 				</div>
 			</div>
 			
-			<div class="cl"></div>
+			<div class="cl">&nbsp;</div>
 		</div>
 		
 
