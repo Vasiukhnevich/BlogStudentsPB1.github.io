@@ -3,12 +3,12 @@
 body {
     font-size: 12px;
     line-height: 20px;
-    font-family: Montserrat, Sans-Serif;
+    font-family: Montserrat, Sans-Serif, serif;
     color: #333;
     background: repeat 0 0;
 }
 
-a { color: #037916; text-decoration: none; cursor:pointer; }
+a { color: #037916; text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 a img { border: 20px; }
@@ -44,7 +44,7 @@ textarea { overflow:auto; }
     height: 43px;
     font-size: 15px;
     line-height: 43px;
-    font-weight: bold;
+    font-weight: Bold;
     text-transform: capitalize; }
 #navigation ul li:first-child {
     order: 1;
