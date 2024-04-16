@@ -20,32 +20,17 @@
 
 			</ul>
 		</div>
-
-		<div id="main">
-			<div id="content" class="left">
-
-				<div class="projects">
-					<h3>Post line</h3>
-                    {% for post in posts %}
-					<div class="aler alert-warning">
-                        <h3>{{ post.title }}</h3>
-                        <p>{{ post.anons }}</p>
-                        <a href="{% url 'news-detail' post.id %}" class="btn btn-warning">Читать детальнее</a>
-
-
-					{% endfor %}
-				</div>
-			</div>
-
-			<div class="cl"></div>
-		</div>
-
-
 	</div>
 
 	<div id="footer">
 		<p class="copy right">Project Blog Students PB &copy;  2024 </p>
 	</div>
+</div>
+<div class = "features">
+    <h1>{{ article.title }}</h1>
+    <p>{{ article.date }}</p>
+    <p>{{ article.full_text }}</p>
+
 </div>
 </body>
 </html>

@@ -1,12 +1,17 @@
 from django.shortcuts import render, redirect
 from .models import Articles
 from .forms import ArticlesForm
-
+from django.views.generic import DetailView
 # Create your views here.
 
 def posts(request):
-    posts = Articles.objects.order_by('date')
+    posts = Articles.objects.order_by('-date')
     return render(request, 'news/all_posts.html', {'posts': posts})
+
+class PostDetailView(DetailView):
+    model = Articles
+    template_name = 'news/details_view.html'
+    context_object_name = 'article'
 
 def create(request):
     error = ''
