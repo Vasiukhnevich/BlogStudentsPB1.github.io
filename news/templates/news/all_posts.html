@@ -17,40 +17,30 @@
 			    <li><a href="/" class="active">Home</a></li>
 			    <li><a href="/admin">My account</a></li>
                 <li><a href="https://github.com/Vasiukhnevich/BlogStudentsPB">Git Hub Project</a></li>
-                <li><a href="posts">New Posts</a><li>
-			    <li><a href="{% url 'create' %}"><button class="btn btn-info"><i class="fas fa-plus-circle"></i> Create post </button></a></li>
+
 			</ul>
 		</div>
 
 		<div id="main">
 			<div id="content" class="left">
-				
+
 				<div class="projects">
 					<h3>Articles</h3>
-                    {% for post in post_list %}
-					<div class="item">
-						<div class="image left">
-							<a href="#"><img src="{{ post.img.url }}" width="200px" /></a>
-						</div>
-						<div class="text left">
-							<h2><a href="{{ post.id }}"> {{ post.title }}</a></h2>
-                            <h3> </h3>
-							<p>{{ post.description }}</p>
-							<p>Author: {{ post.author }}</p>
-                            <p>Date published: {{ post.date }} </p>
-						</div>
-						<div class="cl">&nbsp;</div>
-					</div>
+                    {% for post in posts %}
+					<div class="aler alert-warning">
+                        <h3>{{ post.title }}</h3>
+                        <p>{{ post.anons }}</p>
+
 					{% endfor %}
 				</div>
 			</div>
-			
+
 			<div class="cl"></div>
 		</div>
-		
+
 
 	</div>
-	
+
 	<div id="footer">
 		<p class="copy right">Project Blog Students PB &copy;  2024 </p>
 	</div>
