@@ -1,12 +1,24 @@
 from django.shortcuts import render, redirect
 from .models import Articles
 from .forms import ArticlesForm
-from django.views.generic import DetailView
+from django.views.generic import DetailView, UpdateView, DeleteView
 # Create your views here.
 
 def posts(request):
     posts = Articles.objects.order_by('-date')
     return render(request, 'news/all_posts.html', {'posts': posts})
+
+class PostUpdateView(UpdateView):
+    model = Articles
+    template_name = 'news/create.html'
+    form_class = ArticlesForm
+
+class PostDeleteView(DeleteView):
+    model = Articles
+    template_name = 'news/news-delete.html'
+    success_url = '/posts'
+
+
 
 class PostDetailView(DetailView):
     model = Articles
